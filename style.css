@@ -1,0 +1,301 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fffaf3;
+    color: #0d023f;
+    line-height: 1.6;
+}
+
+
+header {
+    background-color: #2B1B17;
+    padding: 15px 6%;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+.navbar h1 {
+    color: #d3b50e;
+    font-size: 25px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar a:hover {
+    color: #ffcc80;
+}
+
+/* Welcome Section with Coffee Background */
+.hero {
+    background:
+        linear-gradient(
+            rgba(40, 25, 20, 0.48),
+            rgba(40, 25, 20, 0.48)
+        ),
+        url("images/croissant.jpg");
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #4e342e;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+}
+
+.button:hover {
+    background-color: #795548;
+}
+
+
+.menu {
+    padding: 50px 7%;
+    text-align: center;
+}
+
+.menu > h2 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    margin-bottom: 30px;
+    color: #795548;
+}
+
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+
+/* Menu Grid */
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    align-items: stretch;
+}
+
+/* Individual Menu Cards */
+.menu-item {
+    background-color: #ffffff;
+    padding: 25px 20px;
+    border: 1px solid #eaded1;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+
+.food-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.menu-item h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    color: #6d4c41;
+    margin-bottom: 15px;
+}
+
+
+.menu-item h4 {
+    font-size: 19px;
+    color: #795548;
+    margin-top: auto;
+    padding-top: 10px;
+    margin-bottom: 15px;
+}
+
+.menu-item button {
+    background-color: #6d4c41;
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    width: 100%;
+}
+
+.menu-item button:hover {
+    background-color: #3e2723;
+}
+
+
+.about {
+    background-color: #efe0cf;
+    text-align: center;
+    padding: 45px 10%;
+}
+
+.about h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.about p {
+    max-width: 750px;
+    margin: auto;
+}
+
+
+footer {
+    background-color: #4e342e;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+footer h2 {
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+
+@media (max-width: 900px) {
+    .menu-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .menu-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 55px 15px;
+    }
+
+    .hero h2 {
+        font-size: 27px;
+    }
+
+    .menu {
+        padding: 35px 6%;
+    }
+}
+
+/* Welcome animation */
+.hero h2,
+.hero p,
+.hero .button {
+    animation: fadeIn 1s ease both;
+}
+
+.hero p {
+    animation-delay: 0.2s;
+}
+
+.hero .button {
+    animation-delay: 0.4s;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button hover effect */
+.menu-item button,
+.button {
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.menu-item button:hover,
+.button:hover {
+    background-color: #a07856;
+    transform: scale(1.03);
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
